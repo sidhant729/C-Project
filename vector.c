@@ -35,14 +35,6 @@ void* pop_back(vector* v)
     void* toReturn = v->data[--v->sz];
     return toReturn;
 }
-
-void erase(vector* v)
-{
-    while (v->sz--) {
-        pop_back(v);
-    }
-}
-
 int size(vector* v)
 {
     return v->sz;
