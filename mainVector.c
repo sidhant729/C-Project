@@ -6,7 +6,7 @@ int main()
 {
     vector* v = createVector();
     for (int i = 0; i < 5; i++) {
-        push_back(v, (void*)(intptr_t)i);
+        push_back(v, (int)(intptr_t)i);
     }
 
     for (int i = 0; i < 5; i++) {
