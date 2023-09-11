@@ -50,55 +50,6 @@ void add(Set* s, void* val)
         s->sz++;
     }
 }
-// Union Of Two Sets
-Set* getUnion(Set* s1, Set* s2)
-{
-    Set* newSet = createSet();
-
-    for(int i = 0; i < s1->sz; i++)
-    {
-        add(newSet, s1->data[i]);
-    }
-    for(int j = 0; j < s2->sz; j++)
-    {
-        add(newSet, s2->data[j]);
-    }
-    return newSet;
-}
-
-// Common Of Two Sets
-Set* getIntersection(Set* s1, Set* s2)
-{
-    Set* newSet = createSet();
-    for(int i = 0; i < s1->sz; i++)
-    {
-        for(int j = 0; j < s2->sz; j++)
-        {
-            if(s1->data[i] == s2->data[j])
-            {
-                add(newSet, s1->data[i]);
-            }
-        }
-    }
-}
-// Difference Of Two Sets
-Set* getDifference(Set* s1, Set* s2)
-{
-    Set* newSet = createSet();
-    for(int i = 0; i < s1->sz; i++)
-    {
-        bool isPresent = false;
-        for(int j = 0; j < s2->sz; j++)
-        {
-            if(s1->data[i] == s2->data[j])
-            {
-                isPresent = true;
-            }
-        }
-        if(isPresent == false) add(newSet, s1->data[i]);
-    }
-}
-
 // Returns The Size of The Set
 int size(Set* s)
 {
